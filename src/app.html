@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="background">
+        </div>
+        <div class="containerBox">
+            <div class="Tool">
+                <div class="write" @click="ShowForm">
+                    <img src="../src/image/edit.png" alt="">
+                </div>
+                <div class="Title">
+                    <a href="">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        ShadowVents
+                    </a>
+                </div>
+                <div class="write" @click="reset">
+                    <img src="../src/image/rotation.png" alt="">
+                </div>
+            </div>
+            <div class="dash"></div>
+            <div class="dailyletter">
+                <div class="letter" v-for="letter in letters">
+                    <div class="Test">
+                        <p>{{letter[0]}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- InputFrom -->
+        <div class="lampshade" v-show="inputState">
+            <div class="From">
+                <div class="CloseBtn" @click="ShowForm">
+                    <img src="../src/image/switch.png" alt="">
+                </div>
+                <textarea class="cyberpunk" v-model="message"></textarea>
+                <div class="btn" @click="submit">AVAILABLE NOW</div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
