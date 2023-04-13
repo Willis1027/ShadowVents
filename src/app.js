@@ -6,12 +6,17 @@ export default {
             inputState: false,
             message: '',
             letters: [],
+            loading: true,
+            show: false,
         }
     },
     mounted() {
         axios.get('https://script.google.com/macros/s/AKfycbzQIVRaKOktqSZye6RebfcctsvCRwzJM7UOprTkH34Uj3-DLJ-0X4SGLBjjJv-cPggq/exec')
             .then((response) => {
                 this.letters = response['data'].slice(-8)
+            }).then(()=>{
+                this.loading = false
+                this.show = true
             })
             .catch((error) => console.log(error))
     },
@@ -35,9 +40,14 @@ export default {
             this.message = ''
         },
         reset() {
+            this.loading = true
+            this.show = false
             axios.get('https://script.google.com/macros/s/AKfycbzQIVRaKOktqSZye6RebfcctsvCRwzJM7UOprTkH34Uj3-DLJ-0X4SGLBjjJv-cPggq/exec')
                 .then((response) => {
                     this.letters = response['data'].slice(-8)
+                }).then(()=>{
+                    this.loading = false
+                    this.show = true
                 })
                 .catch((error) => console.log(error))
         }

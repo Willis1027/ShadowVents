@@ -31,7 +31,10 @@
                 </div>
             </div>
             <div class="dash"></div>
-            <div class="dailyletter">
+            <div class="loading" v-show="loading">
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+            <div class="dailyletter" v-show="show">
                 <div class="letter" v-for="letter in letters">
                     <div class="Test">
                         <p>{{letter[0]}}</p>
