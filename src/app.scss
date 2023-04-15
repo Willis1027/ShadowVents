@@ -3,48 +3,129 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 * {
@@ -54,13 +135,19 @@ table {
 }
 
 @mixin phone {
-  @media(max-width:768px) {
+  @media (max-width: 768px) {
     @content;
   }
 }
 
 @mixin Lattop {
-  @media(max-width:1440px) {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin LattopL {
+  @media (max-width: 1440px) {
     @content;
   }
 }
@@ -77,29 +164,28 @@ table {
     width: 100%;
     height: 100%;
     background: yellow;
-    clip-path: polygon(0% 0%,
-        10% 0%,
-        11% 2%,
-        89% 2%,
-        90% 0%,
-        /* right-top */
-        100% 0%,
-        100% 10%,
-        99% 12%,
-        99% 88%,
-        100% 90%,
-        /* right-bottom */
-        100% 100%,
-        90% 100%,
-        89% 98%,
-        11% 98%,
-        10% 100%,
-        /* left-bottom */
-        0% 100%,
-        0% 90%,
-        1% 88%,
-        1% 12%,
-        0% 10%);
+    clip-path: polygon(
+      0% 0%,
+      10% 0%,
+      11% 2%,
+      89% 2%,
+      90% 0%,
+      /* right-top */ 100% 0%,
+      100% 10%,
+      99% 12%,
+      99% 88%,
+      100% 90%,
+      /* right-bottom */ 100% 100%,
+      90% 100%,
+      89% 98%,
+      11% 98%,
+      10% 100%,
+      /* left-bottom */ 0% 100%,
+      0% 90%,
+      1% 88%,
+      1% 12%,
+      0% 10%
+    );
   }
 
   .background::after {
@@ -143,7 +229,7 @@ table {
         }
       }
       .reload {
-        transition: all .5s;
+        transition: all 0.5s;
         cursor: pointer;
         width: 30px;
         height: 30px;
@@ -170,25 +256,26 @@ table {
           position: relative;
           display: inline-block;
           padding: 15px 30px;
-          color: #F9F54B;
+          color: #f9f54b;
           text-transform: uppercase;
           letter-spacing: 5px;
           text-decoration: none;
           font-size: 24px;
           overflow: hidden;
-          transition: .2s;
+          transition: 0.2s;
         }
 
         a:hover {
           color: #255784;
-          background: #F9F54B;
-          box-shadow: 0 0 10px #F9F54B, 0 0 40px #F9F54B, 0 0 80px #F9F54B;
+          background: #f9f54b;
+          box-shadow: 0 0 10px #f9f54b, 0 0 40px #f9f54b, 0 0 80px #f9f54b;
           transition-delay: 1s;
         }
 
         a span {
           position: absolute;
           display: block;
+          
         }
 
         a span:nth-child(1) {
@@ -196,7 +283,7 @@ table {
           left: -100%;
           width: 100%;
           height: 2px;
-          background: linear-gradient(90deg, transparent, #F9F54B);
+          background: linear-gradient(90deg, transparent, #f9f54b);
         }
 
         a:hover span:nth-child(1) {
@@ -209,14 +296,13 @@ table {
           right: 0;
           width: 2px;
           height: 100%;
-          background: linear-gradient(180deg, transparent, #F9F54B);
+          background: linear-gradient(180deg, transparent, #f9f54b);
         }
 
         a:hover span:nth-child(2) {
           top: 100%;
           transition: 1s;
-          transition-delay: .25s;
-
+          transition-delay: 0.25s;
         }
 
         a span:nth-child(3) {
@@ -224,13 +310,13 @@ table {
           left: 100%;
           width: 100%;
           height: 2px;
-          background: linear-gradient(270deg, transparent, #F9F54B);
+          background: linear-gradient(270deg, transparent, #f9f54b);
         }
 
         a:hover span:nth-child(3) {
           left: -100%;
           transition: 1s;
-          transition-delay: .5s;
+          transition-delay: 0.5s;
         }
 
         a span:nth-child(4) {
@@ -238,22 +324,38 @@ table {
           left: 0;
           width: 2px;
           height: 100%;
-          background: linear-gradient(360deg, transparent, #F9F54B);
+          background: linear-gradient(360deg, transparent, #f9f54b);
         }
 
         a:hover span:nth-child(4) {
           bottom: 100%;
           transition: 1s;
-          transition-delay: .75s;
-
+          transition-delay: 0.75s;
         }
       }
     }
   }
 
   .dash {
-    border-top: 5px dashed #F9F54B;
     width: 90%;
+    height: 5px;
+    background: linear-gradient(#14fee9, #ffeb3b, #ff00e0);
+    margin-bottom: 20px;
+    animation: rotate 1.5s linear infinite;
+  }
+
+  @keyframes rotate {
+    0% {
+      filter: hue-rotate(0deg);
+      box-shadow: 0 0 10px #14fee9, 0 0 40px #ffeb3b, 0 0 80px #ff00e0;
+    }
+    50% {
+      filter: hue-rotate(180deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+      box-shadow: 0 0 10px #ffeb3b, 0 0 40px #ffeb3b, 0 0 80px #ffeb3b;
+    }
   }
 
   .dailyletter {
@@ -277,28 +379,35 @@ table {
         border-left: 5px solid yellow;
         border-right: 5px solid yellow;
         border-bottom: 15px solid yellow;
-        clip-path: polygon(0px 25px,
-            26px 0px,
-            calc(60% - 25px) 0px,
-            60% 25px,
-            100% 25px,
-            100% calc(100% - 10px),
-            calc(100% - 15px) calc(100% - 10px),
-            calc(80% - 10px) calc(100% - 10px),
-            calc(80% - 15px) calc(100% - 0px),
-            10px calc(100% - 0px),
-            0% calc(100% - 10px));
+        clip-path: polygon(
+          0px 25px,
+          26px 0px,
+          calc(60% - 25px) 0px,
+          60% 25px,
+          100% 25px,
+          100% calc(100% - 10px),
+          calc(100% - 15px) calc(100% - 10px),
+          calc(80% - 10px) calc(100% - 10px),
+          calc(80% - 15px) calc(100% - 0px),
+          10px calc(100% - 0px),
+          0% calc(100% - 10px)
+        );
         background: white;
+
+        @include LattopL {
+          width: 250px;
+          height: 150px;
+        }
+
+        @include Lattop {
+          width: 190px;
+          height: 130px;
+        }
 
         @include phone {
           width: 250px;
           height: 150px;
           margin-top: 20px;
-        }
-
-        @include Lattop {
-          width: 280px;
-          height: 150px;
         }
 
         .Test p {
@@ -321,7 +430,7 @@ table {
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba($color: #000000, $alpha: .3);
+    background: rgba($color: #000000, $alpha: 0.3);
 
     .From {
       position: absolute;
@@ -329,14 +438,15 @@ table {
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      top: 55%;
+      top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       border-radius: 10px;
       width: 70%;
-      height: 70%;
+      height: 80%;
       background-color: #00ffd2;
-      border: 10px solid black;
+      border: 5px solid black;
+      padding: 20px;
 
       .CloseBtn {
         cursor: pointer;
@@ -347,11 +457,16 @@ table {
         width: 30px;
         height: 30px;
         background: red;
-
+        transition: all .5s ease;
         img {
           width: 100%;
           height: 100%;
         }
+      }
+
+      .CloseBtn:hover{
+        background: green;
+
       }
 
       .cyberpunk {
@@ -363,17 +478,19 @@ table {
         border-left: 5px solid #000;
         border-right: 5px solid #000;
         border-bottom: 15px solid #000;
-        clip-path: polygon(0px 25px,
-            26px 0px,
-            calc(60% - 25px) 0px,
-            60% 25px,
-            100% 25px,
-            100% calc(100% - 10px),
-            calc(100% - 15px) calc(100% - 10px),
-            calc(80% - 10px) calc(100% - 10px),
-            calc(80% - 15px) calc(100% - 0px),
-            10px calc(100% - 0px),
-            0% calc(100% - 10px));
+        clip-path: polygon(
+          0px 25px,
+          26px 0px,
+          calc(60% - 25px) 0px,
+          60% 25px,
+          100% 25px,
+          100% calc(100% - 10px),
+          calc(100% - 15px) calc(100% - 10px),
+          calc(80% - 10px) calc(100% - 10px),
+          calc(80% - 15px) calc(100% - 0px),
+          10px calc(100% - 0px),
+          0% calc(100% - 10px)
+        );
         margin-bottom: 10px;
         padding: 12px;
 
@@ -388,11 +505,11 @@ table {
       }
     }
   }
-
 }
 
 .btn,
 .btn::after {
+  margin-top: 10px;
   position: relative;
   cursor: pointer;
   width: 250px;
@@ -403,6 +520,12 @@ table {
   color: white;
   background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
   box-shadow: 6px 0 0 #00e6f6;
+  @include LattopL {
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+  }
 }
 
 .btn::after {
@@ -416,11 +539,13 @@ table {
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(45deg,
-      transparent 3%,
-      #00e6f6 3%,
-      #00e6f6 5%,
-      #ff013c 5%);
+  background: linear-gradient(
+    45deg,
+    transparent 3%,
+    #00e6f6 3%,
+    #00e6f6 5%,
+    #ff013c 5%
+  );
   text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
   clip-path: var(--slice-0);
 }
@@ -429,7 +554,6 @@ table {
   animation: glitch 1s;
   animation-timing-function: steps(1);
 }
-
 
 @keyframes glitch {
   0% {
@@ -539,7 +663,7 @@ table {
   }
 }
 
-.loading{
+.loading {
   width: 100%;
   height: 100%;
   display: flex;
